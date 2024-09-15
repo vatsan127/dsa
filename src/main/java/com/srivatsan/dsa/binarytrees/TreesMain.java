@@ -51,7 +51,7 @@ public class TreesMain {
         binaryTrees.getNodeAtDistance(1);
 
         // Level Order Traversal in Binary Tree
-//        binaryTrees.levelOrderTraversal();
+        binaryTrees.levelOrderTraversal();
 
         // Get the Max Height of the Binary Tree
         System.out.println("height : " + binaryTrees.height());

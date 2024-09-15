@@ -185,7 +185,7 @@ public class BinaryTrees {
     public void getNodeAtDistance(int distance) {
         orderList = new ArrayList<>();
         getNodeAtDistance(root, distance);
-        System.out.println(orderList);
+        System.out.println(String.format("Node At Distance : %d :: %s", distance, orderList));
     }
 
     private void getNodeAtDistance(Node root, int distance) {
@@ -225,6 +225,7 @@ public class BinaryTrees {
      * Traversal -  Breadth First or Level Order Traversal
      */
     public void levelOrderTraversal() {
+        System.out.println("Level Order Traversal");
         for (int i = 0; i <= height(); i++) {
             getNodeAtDistance(i);
         }

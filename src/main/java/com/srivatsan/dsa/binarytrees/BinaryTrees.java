@@ -16,6 +16,33 @@ class Node {
 
 public class BinaryTrees {
 
+    /*
+     * RightChild should be greater than Root
+     * LeftChild should be less than Root
+     * Duplicate Entries are not allowed
+     * Right Skewed: Most of the Node only have right child
+     * Ex: 1, 2, 3, 4
+     *  1
+     *   \
+     *    2
+     *     \
+     *      3
+     *       \
+     *        4
+     *
+     *
+     *
+     * Left Skewed: Most of the Node only have Left child
+     * Ex: 8, 7, 6, 5
+     *                  8
+     *                 /
+     *                7
+     *               /
+     *              6
+     *             /
+     *            5
+     * */
+
     Node root;
 
     private List<Integer> orderList;
@@ -58,8 +85,7 @@ public class BinaryTrees {
     }
 
     private void preOrderTraverse(Node root) {
-        if (root == null)
-            return;
+        if (root == null) return;
         orderList.add(root.value);
         preOrderTraverse(root.leftChild);
         preOrderTraverse(root.rightChild);
@@ -76,8 +102,7 @@ public class BinaryTrees {
     }
 
     private void postOrderTraverse(Node root) {
-        if (root == null)
-            return;
+        if (root == null) return;
 
         postOrderTraverse(root.leftChild);
         postOrderTraverse(root.rightChild);
@@ -96,8 +121,7 @@ public class BinaryTrees {
     }
 
     private void inOrderTraverse(Node root) {
-        if (root == null)
-            return;
+        if (root == null) return;
 
         inOrderTraverse(root.leftChild);
         orderList.add(root.value);
@@ -112,12 +136,9 @@ public class BinaryTrees {
     public boolean find(int input) {
         Node node = root;
         while (node != null) {
-            if (input < node.value)
-                node = node.leftChild;
-            else if (input > node.value)
-                node = node.rightChild;
-            else
-                return true;
+            if (input < node.value) node = node.leftChild;
+            else if (input > node.value) node = node.rightChild;
+            else return true;
         }
         return false;
     }
@@ -127,14 +148,12 @@ public class BinaryTrees {
      */
 
     public int findMinValue() {
-        if (root == null)
-            return -1;
+        if (root == null) return -1;
         return findMinValue(root);
     }
 
     private int findMinValue(Node root) {
-        if (root == null)
-            return Integer.MAX_VALUE;
+        if (root == null) return Integer.MAX_VALUE;
 
         int minLeft = findMinValue(root.leftChild);
         int minRight = findMinValue(root.rightChild);
@@ -161,18 +180,14 @@ public class BinaryTrees {
      * equality check between 2 Trees Using PreOrder traversal
      */
     public boolean compareTrees(BinaryTrees other) {
-        if (other == null)
-            return false;
+        if (other == null) return false;
         return equals(root, other.root);
     }
 
     private boolean equals(Node first, Node second) {
-        if (first == null && second == null)
-            return true;
+        if (first == null && second == null) return true;
         if (first != null && second != null)
-            return first.value == second.value
-                    && equals(first.leftChild, second.leftChild)
-                    && equals(first.rightChild, second.rightChild);
+            return first.value == second.value && equals(first.leftChild, second.leftChild) && equals(first.rightChild, second.rightChild);
 
         return false;
     }
@@ -190,8 +205,7 @@ public class BinaryTrees {
 
     private void getNodeAtDistance(Node root, int distance) {
 
-        if (root == null)
-            return;
+        if (root == null) return;
 
         if (distance == 0) {
             orderList.add(root.value);

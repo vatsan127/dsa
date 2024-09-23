@@ -1,16 +1,45 @@
 package com.srivatsan.dsa.avl;
 
 /**
- * AVL Trees are a type of self-balancing binary search tree.
+ * <b>AVL Trees are a type of self-balancing Binary Search Tree (BST).</b>
+ *
+ * <br></br>
  * In an AVL tree, for every node, the difference between the height of the left and right subtrees
  * (called the balance factor) must be less than or equal to one.
- * - balanceFactor = height(left) - height(right)
- * - balanceFactor > 1 indicates a left-heavy tree.
- * - balanceFactor < -1 indicates a right-heavy tree.
+ *
+ * <h3>Rotations</h3>
+ * <li>Left Rotation, when the data is present in Right side of the Node and needs to be rotated to left side.</li>
+ * <li>Right Rotation, when the data is present in Left side of the Node and needs to be rotated to right side.</li>
+ *
+ * <h3>Balance Factor</h3>
+ * <li>balanceFactor = height(left) - height(right)</li>
+ * <li>balanceFactor > 1 indicates a left-heavy tree.</li>
+ * <li>balanceFactor < -1 indicates a right-heavy tree.</li>
  */
+
+/* Left Rotation (LR)
+ * =============
+ *  10                              20
+ *      20          =>             /  \
+ *          30                   10    30
+ *
+ * Right Rotation (RR)
+ * ==============
+ *          30                      20
+ *      20          =>             /  \
+ *  10                           10    30
+ *
+ * Left Rotation, Right Rotation (LR, RR)
+ * ======================================
+ *
+ * Right Rotation, Left Rotation (RR, LR)
+ * ======================================
+ *
+ */
+
 public class AVLTrees {
 
-    private class AVLNode {
+    private static class AVLNode {
         private AVLNode leftChild;
         private AVLNode rightChild;
         private final int value;

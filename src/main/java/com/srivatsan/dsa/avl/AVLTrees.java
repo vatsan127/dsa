@@ -1,6 +1,7 @@
 package com.srivatsan.dsa.avl;
 
 /**
+ * <h2>AVL Trees</h2>
  * <b>AVL Trees are a type of self-balancing Binary Search Tree (BST).</b>
  *
  * <br></br>
@@ -8,8 +9,8 @@ package com.srivatsan.dsa.avl;
  * (called the balance factor) must be less than or equal to one.
  *
  * <h3>Rotations</h3>
- * <li>Left Rotation, when the data is present in Right side of the Node and needs to be rotated to left side.</li>
- * <li>Right Rotation, when the data is present in Left side of the Node and needs to be rotated to right side.</li>
+ * <li><b>Left Rotation</b>, when the data is present in Right side of the Node and needs to be rotated to left side.</li>
+ * <li><b>Right Rotation</b>, when the data is present in Left side of the Node and needs to be rotated to right side.</li>
  *
  * <h3>Balance Factor</h3>
  * <li>balanceFactor = height(left) - height(right)</li>
@@ -39,7 +40,7 @@ package com.srivatsan.dsa.avl;
 
 public class AVLTrees {
 
-    private static class AVLNode {
+    private class AVLNode {
         private AVLNode leftChild;
         private AVLNode rightChild;
         private final int value;
@@ -70,11 +71,11 @@ public class AVLTrees {
      */
     private AVLNode insert(AVLNode root, int value) {
         if (root == null) return new AVLNode(value);
-        if (value < root.value) {
+        if (value < root.value)
             root.leftChild = insert(root.leftChild, value);
-        } else {
+        else
             root.rightChild = insert(root.rightChild, value);
-        }
+
         root.height = setHeight(root);
         return balance(root);
     }
@@ -87,14 +88,12 @@ public class AVLTrees {
      */
     private AVLNode balance(AVLNode node) {
         if (isLeftHeavy(node)) {
-            if (balanceFactor(node.leftChild) < 0) {
+            if (balanceFactor(node.leftChild) < 0)
                 node.leftChild = rotateLeft(node.leftChild);
-            }
             return rotateRight(node);
         } else if (isRightHeavy(node)) {
-            if (balanceFactor(node.rightChild) > 0) {
+            if (balanceFactor(node.rightChild) > 0)
                 node.rightChild = rotateRight(node.rightChild);
-            }
             return rotateLeft(node);
         }
         return node;

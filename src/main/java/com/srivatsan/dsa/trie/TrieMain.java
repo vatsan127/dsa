@@ -6,10 +6,9 @@ public class TrieMain {
         trie.insert("hello");
         trie.insert("hel");
         trie.insert("birds");
-        System.out.println(trie.contains("hel"));
-//        trie.remove("hel");
-        System.out.println(trie.contains("hel"));
 
+        trie.remove("hello");
+        System.out.println(trie.contains("hel"));
         System.out.println(trie.findWords("h"));
 
     }

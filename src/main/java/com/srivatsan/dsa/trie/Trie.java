@@ -147,6 +147,7 @@ public class Trie {
     public List<String> findWords(String prefix) {
         List<String> words = new ArrayList<>();
         Node lastNode = findLastNodeOf(prefix);
+        System.out.println("lastNode : "+lastNode.toString());
         findWords(lastNode, prefix, words);
         return words;
     }

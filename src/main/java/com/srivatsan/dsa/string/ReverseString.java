@@ -1,28 +1,19 @@
 package com.srivatsan.dsa.string;
 
-import java.util.Stack;
-
 public class ReverseString {
     public static void main(String[] args) {
-        String str = "abcd";
-        String reversed = reverseUsingStack(str);
-        System.out.println(reversed);
+        String str = "Hello";
+        String reversedString = reverseString(str);
+        System.out.println(reversedString);
     }
 
-    public static String reverseUsingStack(String input) {
-        if (input == null) throw new IllegalArgumentException();
+    private static String reverseString(String word) {
+        StringBuilder reversedString = new StringBuilder();
 
-        Stack<Character> stack = new Stack<>();
-        char[] charArray = input.toCharArray();
-        for (char ch : charArray) {
-            stack.push(ch);
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversedString.append(word.charAt(i));
         }
 
-        StringBuilder reversed = new StringBuilder();
-        while (!stack.empty()) {
-            reversed.append(stack.pop());
-        }
-        return reversed.toString();
+        return reversedString.toString();
     }
-
 }

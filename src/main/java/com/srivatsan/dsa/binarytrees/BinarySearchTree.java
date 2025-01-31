@@ -14,7 +14,7 @@ class Node {
     }
 }
 
-public class BinaryTrees {
+public class BinarySearchTree {
 
     /*
      * RightChild should be greater than Root
@@ -179,7 +179,7 @@ public class BinaryTrees {
     /**
      * equality check between 2 Trees Using PreOrder traversal
      */
-    public boolean compareTrees(BinaryTrees other) {
+    public boolean compareTrees(BinarySearchTree other) {
         if (other == null) return false;
         return equals(root, other.root);
     }
@@ -209,6 +209,7 @@ public class BinaryTrees {
 
         if (distance == 0) {
             orderList.add(root.value);
+            return;
         }
 
         getNodeAtDistance(root.leftChild, distance - 1);

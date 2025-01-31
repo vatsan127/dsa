@@ -17,44 +17,44 @@ public class TreesMain {
 
         List<Integer> data1 = List.of(8, 6, 7, 2, 5, 12, 15, 10);
         List<Integer> data2 = List.of(8, 1, 7, 2, 5, 12, 15, 10);
-        BinaryTrees binaryTrees = new BinaryTrees();
-        BinaryTrees binaryTrees2 = new BinaryTrees();
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree binarySearchTree2 = new BinarySearchTree();
         for (Integer i : data1) {
-            binaryTrees.insert(i);
+            binarySearchTree.insert(i);
         }
         for (Integer i : data2) {
-            binaryTrees2.insert(i);
+            binarySearchTree2.insert(i);
         }
 
         // Traverse PreOder
-        binaryTrees.preOrderTraverse();
+        binarySearchTree.preOrderTraverse();
 
         // Traverse PostOrder
-        binaryTrees.postOrderTraverse();
+        binarySearchTree.postOrderTraverse();
 
         // Traverse InOrder
-        binaryTrees.inOrderTraverse();
+        binarySearchTree.inOrderTraverse();
 
         // find whether an element exists
-        System.out.println(binaryTrees.find(8));
+        System.out.println(binarySearchTree.find(8));
 
         // find Min value in Binary Tree
-        System.out.println(binaryTrees.findMinValue());
+        System.out.println(binarySearchTree.findMinValue());
 
         // find Min value in BST
-        System.out.println(binaryTrees.findMinValueInBST());
+        System.out.println(binarySearchTree.findMinValueInBST());
 
         // compare 2 Binary Trees
-        System.out.println(binaryTrees.compareTrees(binaryTrees2));
+        System.out.println(binarySearchTree.compareTrees(binarySearchTree2));
 
         // Get nodes at a distance from node
-        binaryTrees.getNodeAtDistance(1);
+        binarySearchTree.getNodeAtDistance(1);
 
         // Level Order Traversal in Binary Tree
-        binaryTrees.levelOrderTraversal();
+        binarySearchTree.levelOrderTraversal();
 
         // Get the Max Height of the Binary Tree
-        System.out.println("height : " + binaryTrees.height());
+        System.out.println("height : " + binarySearchTree.height());
 
     }
 }

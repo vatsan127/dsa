@@ -8,8 +8,8 @@ import java.util.List;
 public class Trie {
 
     private class Node {
-        private char value;
-        private HashMap<Character, Node> children = new HashMap<>();
+        private final char value;
+        private final HashMap<Character, Node> children = new HashMap<>();
         private boolean isEndOfWord;
 
         @Override
@@ -147,7 +147,7 @@ public class Trie {
     public List<String> findWords(String prefix) {
         List<String> words = new ArrayList<>();
         Node lastNode = findLastNodeOf(prefix);
-        System.out.println("lastNode : "+lastNode.toString());
+        System.out.println("lastNode : " + lastNode.toString());
         findWords(lastNode, prefix, words);
         return words;
     }

@@ -49,8 +49,8 @@ public class MergeSort {
         int rightSize = arr.length - leftSize;
 
         /*left[] and right[]*/
-        int left[] = new int[leftSize];
-        int right[] = new int[rightSize];
+        int[] left = new int[leftSize];
+        int[] right = new int[rightSize];
 
         /*put data into the left[] and right[]*/
         System.arraycopy(arr, 0, left, 0, leftSize);
@@ -63,7 +63,7 @@ public class MergeSort {
 
 
     public static void main(String[] args) {
-        int arr[] = {64, 34, 25, 12, 22, 11, 90, 87};
+        int[] arr = {64, 34, 25, 12, 22, 11, 90, 87};
         divide(arr);
         System.out.println(Arrays.toString(arr));
     }

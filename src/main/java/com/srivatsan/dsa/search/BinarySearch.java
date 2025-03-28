@@ -1,7 +1,7 @@
 package com.srivatsan.dsa.search;
 
 public class BinarySearch {
-    public static int binarySearch(int arr[], int length, int findNumber) {
+    public static int binarySearch(int[] arr, int length, int findNumber) {
         int left = 0;
         int right = length - 1;
 
@@ -20,7 +20,7 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
-        int arr[] = {11, 12, 22, 25, 34, 64, 87, 90};
+        int[] arr = {11, 12, 22, 25, 34, 64, 87, 90};
         int result = binarySearch(arr, arr.length, 90);
         if (result == -1) {
             System.out.println("Number Not found");

@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class SelectionSort {
 
     public static void main(String[] args) {
-        int arr[] = {64, 24, 12, 22, 11};
+        int[] arr = {64, 24, 12, 22, 11};
         selectionSort(arr);
     }
 

@@ -201,7 +201,7 @@ public class BinarySearchTree {
     public void getNodeAtDistance(int distance) {
         orderList = new ArrayList<>();
         getNodeAtDistance(root, distance);
-        System.out.println(String.format("Node At Distance : %d :: %s", distance, orderList));
+        System.out.printf("Node At Distance : %d :: %s%n", distance, orderList);
     }
 
     private void getNodeAtDistance(Node root, int distance) {
